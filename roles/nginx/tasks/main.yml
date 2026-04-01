@@ -7,8 +7,8 @@
     name: nginx
     state: present
 
-- name: Create index page
-  copy:
-    content: "<h1>Deployed with Ansible</h1>"
+- name: Deploy index page
+  template:
+    src: index.html.j2
     dest: /var/www/html/index.html
   notify: restart nginx
