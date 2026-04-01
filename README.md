@@ -1,15 +1,17 @@
-# Ansible Demo - WordPress Setup (WIP)
+# Ansible Nginx Demo
 
-This is a simple Ansible project to provision a basic web server.
+Configuration Management with Ansible
 
-## What it does
-- Updates system packages
-- Installs Nginx
-- Starts and enables Nginx
+## Features
+- Nginx installation
+- Template deployment
+- Handlers
+- Idempotent playbook
 
-## How to run
-ansible-playbook -i inventories/inventory.ini playbooks/site.yml
+## Project structure
+- inventories/ - hosts definition
+- playbooks/ - main playbooks
+- roles/ - reusable configuration
 
-## Tech
-- Ansible
-- Linux
+## Run
+ansible-playbook playbooks/site.yml
