@@ -1,24 +1,9 @@
-- name: Basic web server setup
+- name: Web server setup
   hosts: web
   become: yes
 
-  tasks:
-    - name: Update apt cache
-      apt:
-        update_cache: yes
+  vars:
+    message: "Deployed with Ansible"
 
-    - name: Install nginx
-      apt:
-        name: nginx
-        state: present
-
-    - name: Ensure nginx is running
-      service:
-        name: nginx
-        state: started
-        enabled: true
-
-    - name: Create simple index page
-      copy:
-        content: "<h1>Deployed with Ansible</h1>"
-        dest: /var/www/html/index.html
+  roles:
+    - nginx
