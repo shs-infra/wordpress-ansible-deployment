@@ -17,3 +17,8 @@
         name: nginx
         state: started
         enabled: true
+
+    - name: Create simple index page
+      copy:
+        content: "<h1>Deployed with Ansible</h1>"
+        dest: /var/www/html/index.html
